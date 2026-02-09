@@ -56,6 +56,7 @@ footer a:hover {
     border-right: 1px solid #1E2D3D;
     height: 100%;
     width: 50px;
+    transition: background-color 0.2s ease-out;
  }
 
 #social-icons > a > img {
@@ -63,16 +64,20 @@ footer a:hover {
     height: 1.25rem; /* 20px */
     margin: auto;
     opacity: 0.4;
+    transition: all 0.25s ease-out;
 }
 
 footer > a > img {
     width: 1.25rem; /* 20px */
     height: 1.25rem; /* 20px */
     margin-left: 0.5rem; /* 8px */
+    transition: all 0.25s ease-out;
   }
 
 #social-icons > a:hover img {
     opacity: 1;
+    transform: translateY(-3px) scale(1.15);
+    filter: drop-shadow(0 4px 8px rgba(67, 217, 173, 0.5));
 }
 
 @media (max-width: 768px) {

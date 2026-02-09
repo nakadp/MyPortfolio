@@ -48,29 +48,59 @@ export default {
 
 <style>
 
+/* Header Glass Effect */
+#navbar {
+  background: rgba(1, 22, 39, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(67, 217, 173, 0.1);
+}
+
 #nav-link {
   border-right: 1px solid #1E2D3D;
   @apply text-menu-text font-fira_retina px-6 h-full flex items-center;
+  transition: all 0.2s ease-out;
+  position: relative;
 }
 
 #nav-link-contact {
   border-left: 1px solid #1E2D3D;
   @apply text-menu-text font-fira_retina px-6 h-full flex items-center;
+  transition: all 0.2s ease-out;
+  position: relative;
 }
 
 #nav-link:hover, #nav-link-contact:hover {
-  background-color: #1e2d3d74;
+  background-color: rgba(67, 217, 173, 0.08);
   color: white;
+}
+
+/* Active indicator glow */
+#nav-link::after, #nav-link-contact::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #43D9AD, transparent);
+  transform: translateX(-50%);
+  transition: width 0.3s ease-out;
+}
+
+#nav-link:hover::after, #nav-link-contact:hover::after {
+  width: 80%;
 }
 
 #nav-logo {
   border-right: 1px solid #1E2D3D;
   @apply text-menu-text font-fira_retina px-6 h-full flex items-center;
+  transition: all 0.2s ease-out;
 }
 
 #nav-logo:hover {
-  background-color: #1e2d3d74;
-  color: white;
+  background-color: rgba(67, 217, 173, 0.08);
+  color: #43D9AD;
 }
 
 #nav-link.router-link-active, #nav-link-contact.router-link-active {
