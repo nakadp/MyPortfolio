@@ -43,15 +43,8 @@
             
         <div class="flex flex-col w-full">
 
-        <!-- windows tab -->
-        <div class="tab-height w-full hidden lg:flex border-right border-bot items-center">
-
-                <div class="flex items-center border-right h-full">
-                    <p class="font-fira_regular text-menu-text text-sm px-3">contacts</p>
-                    <img src="/icons/close.svg" alt="" class="m-3">
-                </div>
-
-            </div>
+        <!-- breadcrumb navigation -->
+        <Breadcrumb :segments="['contact-me', 'contacts']" class="hidden lg:flex border-bot" />
 
             <!-- main -->
             <div class="flex lg:grid lg:grid-cols-2 h-full w-full">

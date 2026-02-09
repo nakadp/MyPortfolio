@@ -109,13 +109,8 @@
       
       <div id="left" class="w-full flex flex-col border-right">
         
-        <!-- windows tab desktop -->
-        <div class="tab-height w-full hidden lg:flex border-bot items-center">
-          <div class="flex items-center border-right h-full">
-            <p v-html="config.about.sections[currentSection]?.title" class="font-fira_regular text-menu-text text-sm px-3"></p>
-            <img src="/icons/close.svg" alt="" class="mx-3">
-          </div>
-        </div>
+        <!-- breadcrumb navigation -->
+        <Breadcrumb :segments="['about-me', currentSection, folder]" class="hidden lg:flex border-bot" />
 
         <!-- windows tab mobile -->
         <div id="tab-mobile" class="flex lg:hidden font-fira_retina">

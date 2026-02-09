@@ -34,14 +34,8 @@
 
     <div class="flex flex-col w-full overflow-hidden">
 
-      <!-- windows tab -->
-      <div class="tab-height w-full hidden lg:flex border-bot items-center">
-        <div class="flex items-center border-right h-full">
-          <p v-for="filter in filters" :key="filter" class="font-fira_regular text-menu-text text-sm px-3">{{ filter }};
-          </p>
-          <img src="/icons/close.svg" alt="" class="m-3">
-        </div>
-      </div>
+      <!-- breadcrumb navigation -->
+      <Breadcrumb :segments="['projects', ...filters]" class="hidden lg:flex border-bot" />
 
       <!-- windows tab mobile -->
       <div id="tab" class="flex lg:hidden items-center">
