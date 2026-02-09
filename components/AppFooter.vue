@@ -19,11 +19,7 @@
             </div>
         </div>
 
-        <!-- github user -->
-        <NuxtLink :to="social.github.url + social.github.user" target="_blank" class="hidden md:flex items-center px-5 border-left">
-            @{{ social.github.user }}
-            <img src="/icons/social/github.svg" alt="github"/>
-        </NuxtLink>
+
 
     </footer>
 </template>
