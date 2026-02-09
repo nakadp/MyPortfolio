@@ -88,6 +88,9 @@ function handleResize() {
   padding-left: 275px;
   overflow-y: auto;
   overflow-x: hidden;
+  /* Center content vertically and horizontally */
+  align-items: center;
+  justify-content: center;
 }
 .hero {
 	width: 100%;
