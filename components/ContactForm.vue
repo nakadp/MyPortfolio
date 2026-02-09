@@ -2,15 +2,15 @@
     <form id="contact-form" class="text-sm">
         <div class="flex flex-col">
             <label for="name-input" class="mb-3">_name:</label>
-            <input type="text" id="name-input" name="name" :placeholder="name" class="p-2 mb-5 placeholder-slate-600" required>
+            <input type="text" id="name-input" name="name" :placeholder="name" class="p-2 mb-5 placeholder-slate-600" required @input="$emit('update:name', $event.target.value)">
         </div>
         <div class="flex flex-col">
             <label for="email-input" class="mb-3">_email:</label>
-            <input type="email" id="email-input" name="email" :placeholder="email" class="p-2 mb-5 placeholder-slate-600" required>
+            <input type="email" id="email-input" name="email" :placeholder="email" class="p-2 mb-5 placeholder-slate-600" required @input="$emit('update:email', $event.target.value)">
         </div>
         <div class="flex flex-col">
             <label for="message-input" class="mb-3">_message:</label>
-            <textarea id="message-input" name="message" :placeholder="message" class="placeholder-slate-600" required></textarea>
+            <textarea id="message-input" name="message" :placeholder="message" class="placeholder-slate-600" required @input="$emit('update:message', $event.target.value)"></textarea>
         </div>
         <button id="submit-button" type="submit" class="py-2 px-4">submit-message</button>
     </form>

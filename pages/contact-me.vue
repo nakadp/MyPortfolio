@@ -51,7 +51,7 @@
         
                 <div id="left" class="h-full w-full flex flex-col border-right items-center">
                     
-                    <ContactForm :name="name" :email="email" :message="message" />
+                    <ContactForm v-model:name="name" v-model:email="email" v-model:message="message" />
 
                 </div>
 
@@ -103,26 +103,6 @@ export default {
         }
     },
     mounted(){
-
-        const nameInput = document.getElementById('name-input');
-        const emailInput = document.getElementById('email-input');
-        const messageInput = document.getElementById('message-input');
-
-        nameInput.addEventListener('input', (event) => {
-            const nameValue = document.getElementById('name-value')
-            nameValue.innerHTML = event.target.value;
-        })
-
-        emailInput.addEventListener('input', (event) => {
-            const emailValue = document.getElementById('email-value')
-            emailValue.innerHTML = event.target.value;
-        })
-
-        messageInput.addEventListener('input', (event) => {
-            const messageValue = document.getElementById('message-value')
-            messageValue.innerHTML = event.target.value;
-        })
-
         /**
          * * Close all submenus
          * ! This is a temporary solution.

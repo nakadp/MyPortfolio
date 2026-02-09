@@ -42,31 +42,43 @@
                     name
                 </span>
                 :
-                <span class="text-codeline-link">"</span>
-                <span id="name-value" class="text-codeline-link">
-                    {{ name }}
-                </span>
-                <span class="text-codeline-link">"</span>
+                <span class="text-codeline-link">"</span><DecryptedText
+                    :text="name"
+                    animateOn="change"
+                    :speed="40"
+                    :sequential="true"
+                    revealDirection="start"
+                    class="text-codeline-link"
+                    encryptedClassName="text-codeline-link opacity-70"
+                /><span class="text-codeline-link">"</span>
                 , <br> &nbsp;&nbsp;
                 <span id="email" class="tag-name">
                     email
                 </span>
                 :
-                <span class="text-codeline-link">"</span>
-                <span id="email-value" class="text-codeline-link">
-                    {{ email }}
-                </span>
-                <span class="text-codeline-link">"</span>
+                <span class="text-codeline-link">"</span><DecryptedText
+                    :text="email"
+                    animateOn="change"
+                    :speed="40"
+                    :sequential="true"
+                    revealDirection="start"
+                    class="text-codeline-link"
+                    encryptedClassName="text-codeline-link opacity-70"
+                /><span class="text-codeline-link">"</span>
                 , <br> &nbsp;&nbsp;
                 <span id="message" class="tag-name">
                     message
                 </span>
                 :
-                <span class="text-codeline-link">"</span>
-                <span id="message-value" class="text-codeline-link">
-                    {{ message }}
-                </span>
-                <span class="text-codeline-link">"</span>
+                <span class="text-codeline-link">"</span><DecryptedText
+                    :text="message"
+                    animateOn="change"
+                    :speed="40"
+                    :sequential="true"
+                    revealDirection="start"
+                    class="text-codeline-link"
+                    encryptedClassName="text-codeline-link opacity-70"
+                /><span class="text-codeline-link">"</span>
                 , <br> &nbsp;&nbsp;
                 date:
                 <span class="text-codeline-link">
