@@ -1,5 +1,5 @@
 <template>
-  	<main v-if="!loading" id="hello">
+  	<main v-if="!loading" id="hello" class="page">
 
     	<!-- gradients -->
     	<div class="css-blurry-gradient-blue"></div>
@@ -86,7 +86,8 @@ function handleResize() {
   width: 100%;
   flex: 1 1 auto;
   padding-left: 275px;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .hero {
 	width: 100%;

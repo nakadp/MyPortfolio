@@ -1,5 +1,5 @@
 <template>
-  <main class="flex flex-col flex-auto lg:flex-row overflow-hidden">
+  <main class="page flex flex-col flex-auto lg:flex-row overflow-hidden">
 
     <div id="mobile-page-title">
       <h2>_projects</h2>
@@ -53,7 +53,7 @@
       </div>
 
       <!-- projects -->
-      <div id="projects-case" class="grid grid-cols-1 lg:grid-cols-2 max-w-full h-full overflow-scroll lg:self-center">
+      <div id="projects-case" class="grid grid-cols-1 lg:grid-cols-2 max-w-full flex-1 overflow-y-auto lg:self-center">
         <div id="not-found"
           class="hidden flex flex-col font-fira_retina text-menu-text my-5 h-full justify-center items-center">
           <span class="flex justify-center text-4xl pb-3">
