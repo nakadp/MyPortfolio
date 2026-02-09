@@ -85,26 +85,31 @@ function handleResize() {
   height: 100%;
   width: 100%;
   flex: 1 1 auto;
-  padding-left: 275px;
+  /* Balanced padding - reduced left padding, added right padding */
+  padding: 20px 40px 20px 40px;
   overflow-y: auto;
   overflow-x: hidden;
   /* Center content vertically and horizontally */
   align-items: center;
   justify-content: center;
+  gap: 40px; /* Space between hero and game */
 }
 .hero {
-	width: 100%;
-	justify-content: center;
-	
+  flex: 1 1 auto;
+  min-width: 300px;
+  max-width: 600px;
+  justify-content: center;
 }
 .game {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	height: 100%;
-	justify-content: center;
-/* 	align-items: center; */
-	z-index: 20;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 400px;
+  max-width: 600px;
+  height: 100%;
+  max-height: 500px;
+  justify-content: center;
+  z-index: 20;
 }
 
 #hello .hero {
@@ -133,7 +138,7 @@ function handleResize() {
 }
 
 #hello .head h2, #hello .head .diple {
-  font-size: 32px;
+  font-size: 24px;
   line-height: 1;
   color: #4D5BCE;
   font-family: 'Fira Code Retina';
@@ -295,7 +300,8 @@ function handleResize() {
 
 @media (min-width: 1024px) and (max-width: 1320px) {
 	#hello {
-		padding-left: 135px;
+		padding: 20px 30px;
+		gap: 30px;
 	}
 }
 
