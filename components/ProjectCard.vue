@@ -42,6 +42,14 @@ const { project, key, index } = defineProps(['project', 'key', 'index'])
   background-color: #011221;
   border-radius: 15px;
   max-width: 400px;
+  /* Smooth hover transition */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+#project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(67, 217, 173, 0.15);
+  border-color: rgba(67, 217, 173, 0.3);
 }
 
 #window {
@@ -53,6 +61,21 @@ const { project, key, index } = defineProps(['project', 'key', 'index'])
 #showcase {
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+#project-card:hover #showcase {
+  transform: scale(1.05);
+}
+
+#view-button {
+  background-color: #1C2B3A;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#view-button:hover {
+  background-color: #2A3F54;
+  box-shadow: 0 0 10px rgba(67, 217, 173, 0.3);
 }
 
 @media (max-width: 768px) {

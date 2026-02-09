@@ -389,7 +389,7 @@
 #console {
     width: 530px;
     height: 475px;
-    border: 1px solid black;
+    border: 1px solid rgba(67, 217, 173, 0.3);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -397,7 +397,21 @@
     border-radius: 10px;
     padding: 30px;
     position: relative;
+    /* Glow effect animation */
+    box-shadow: 0 0 30px rgba(67, 217, 173, 0.2),
+                inset 0 0 60px rgba(67, 217, 173, 0.05);
+    animation: consoleGlow 3s ease-in-out infinite;
+}
 
+@keyframes consoleGlow {
+    0%, 100% {
+        box-shadow: 0 0 30px rgba(67, 217, 173, 0.2),
+                    inset 0 0 60px rgba(67, 217, 173, 0.05);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(67, 217, 173, 0.35),
+                    inset 0 0 80px rgba(67, 217, 173, 0.08);
+    }
 }
 
 #game-screen {

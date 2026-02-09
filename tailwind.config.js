@@ -25,8 +25,40 @@ module.exports = {
                 'greenfy': '#43D9AD',
                 'bluefy-dark': '#011627',
                 'purplefy': '#799ffb',
-
-            }
+                // Accent colors for visual enhancement
+                'accent-cyan': '#43D9AD',
+                'accent-orange': '#FEA55F',
+                'accent-purple': '#4D5BCE',
+                'accent-pink': '#E99287',
+                'accent-blue': '#3A86FF',
+            },
+            boxShadow: {
+                'glow-cyan': '0 0 20px rgba(67, 217, 173, 0.4)',
+                'glow-orange': '0 0 20px rgba(254, 165, 95, 0.4)',
+                'glow-purple': '0 0 20px rgba(77, 91, 206, 0.4)',
+                'glow-blue': '0 0 20px rgba(58, 134, 255, 0.4)',
+                'glow-cyan-lg': '0 0 40px rgba(67, 217, 173, 0.6)',
+                'glow-purple-lg': '0 0 40px rgba(77, 91, 206, 0.6)',
+            },
+            animation: {
+                'fade-in': 'fadeIn 0.5s ease-out forwards',
+                'slide-up': 'slideUp 0.5s ease-out forwards',
+                'glow-pulse': 'glowPulse 2s ease-in-out infinite',
+            },
+            keyframes: {
+                fadeIn: {
+                    '0%': { opacity: '0' },
+                    '100%': { opacity: '1' },
+                },
+                slideUp: {
+                    '0%': { opacity: '0', transform: 'translateY(20px)' },
+                    '100%': { opacity: '1', transform: 'translateY(0)' },
+                },
+                glowPulse: {
+                    '0%, 100%': { boxShadow: '0 0 20px rgba(67, 217, 173, 0.3)' },
+                    '50%': { boxShadow: '0 0 30px rgba(67, 217, 173, 0.6)' },
+                },
+            },
         },
         fontFamily: {
             fira_light: "Fira Code Light",
@@ -36,6 +68,6 @@ module.exports = {
             fira_semibold: "Fira Code SemiBold",
             fira_bold: "Fira Code Bold",
             fira_variable: "Fira Code Variable",
-          }
+        }
     }
 }

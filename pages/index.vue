@@ -7,28 +7,28 @@
 
 		<section class="hero">
 		
-			<div class="head">
-				<span>
+			<div class="head animate-stagger">
+				<span class="stagger-1">
 					Hi all, I am
 				</span>
-				<h1>{{ config.name }}</h1>
-        <span class="diple flex">
+				<h1 class="stagger-2">{{ config.name }}</h1>
+        <span class="diple flex stagger-3">
           >&nbsp;
 				<h2 class="line-1 anim-typewriter max-w-fit"> {{ config.role }} </h2>
         </span>
 			</div>
 
-			<div id="info">
-				<span class="action">
+			<div id="info" class="animate-stagger">
+				<span class="action stagger-4">
 					// complete the game to continue
 				</span>
-				<span :class="{hide: isMobile}">
+				<span :class="{hide: isMobile}" class="stagger-5">
 					// you can also see it on my Github page
 				</span>
-				<span :class="{hide: !isMobile}">
+				<span :class="{hide: !isMobile}" class="stagger-5">
 					// find my profile on Github:
 				</span>
-				<p class="code">
+				<p class="code stagger-6">
 					<span class="identifier">
 						const
 					</span>
@@ -160,6 +160,30 @@ function handleResize() {
   font-family: 'Fira Code Retina';
   padding-bottom: 1rem; /* 16px */
 }
+
+/* Stagger Animation System */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-stagger > * {
+  opacity: 0;
+  animation: fadeSlideUp 0.6s ease-out forwards;
+}
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.4s; }
+.stagger-4 { animation-delay: 0.6s; }
+.stagger-5 { animation-delay: 0.7s; }
+.stagger-6 { animation-delay: 0.8s; }
 
 .code {
   font-family: 'Fira Code Medium';
