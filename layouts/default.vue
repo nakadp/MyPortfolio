@@ -1,5 +1,6 @@
 <template>
     <div>
+      <MobileMenu />
       <AppHeader />
       <slot />
       <AppFooter />
