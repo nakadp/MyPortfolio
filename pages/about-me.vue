@@ -124,7 +124,12 @@
         <div id="commented-text" class="flex h-full w-full lg:border-right overflow-hidden">
 
           <div class="w-full h-full ml-5 mr-10 lg:my-5 overflow-scroll">
-              <CommentedText :text="config.about.sections[currentSection]?.info[folder].description" />
+              <SlidingWindowDecryptedText 
+                :text="config.about.sections[currentSection]?.info[folder].description" 
+                :windowSize="20"
+                :speed="30"
+                encryptedClassName="text-encrypted"
+              />
           </div>
           
           <!-- scroll bar -->
@@ -261,6 +266,12 @@
 
 #section-content #contacts {
   padding: 0px 25px;
+}
+
+/* Encrypted text effect styling */
+.text-encrypted {
+  color: #43D9AD;
+  text-shadow: 0 0 8px rgba(67, 217, 173, 0.4);
 }
 
 </style>
