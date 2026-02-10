@@ -3,7 +3,7 @@
       <nav class="w-full flex justify-between border-bot">
         <github-corner url="https://github.com/nakadp" />
           <div class="flex">
-            <NuxtLink id="nav-logo" to="/">
+            <NuxtLink id="nav-logo" to="/" class="lg:w-[22rem] lg:min-w-[22rem]">
               {{ config.logo_name }}
             </NuxtLink>
 

@@ -15,7 +15,7 @@
       </div>
 
       <!-- focused section content -->
-      <div id="section-content" class="hidden lg:block w-full h-full border-right">
+      <div id="section-content" class="hidden lg:block lg:w-[17rem] lg:min-w-[17rem] h-full border-right">
 
         <!-- title -->
         <div id="section-content-title" class="hidden lg:flex items-center min-w-full">

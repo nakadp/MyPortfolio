@@ -12,7 +12,7 @@
     </div>
 
     <div v-if="showFilters" id="filter-menu"
-      class="w-full flex-col border-right font-fira_regular text-menu-text lg:flex">
+      class="w-full flex-col border-right font-fira_regular text-menu-text lg:flex lg:w-[22rem] lg:min-w-[22rem]">
       <!-- title -->
       <div id="section-content-title" class="hidden lg:flex items-center min-w-full">
         <img id="section-arrow-menu" src="/icons/arrow.svg" alt="" class="section-arrow mx-3">
