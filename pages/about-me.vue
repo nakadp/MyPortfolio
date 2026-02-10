@@ -123,7 +123,7 @@
         <!-- text -->
         <div id="commented-text" class="flex h-full w-full lg:border-right overflow-hidden">
 
-          <div class="w-full h-full ml-5 mr-10 lg:my-5 overflow-scroll">
+          <div class="w-full h-full ml-5 mr-10 lg:my-5 overflow-y-auto hide-scrollbar">
               <SlidingWindowDecryptedText 
                 :text="config.about.sections[currentSection]?.info[folder].description" 
                 :windowSize="20"
@@ -272,6 +272,17 @@
 .text-encrypted {
   color: #43D9AD;
   text-shadow: 0 0 8px rgba(67, 217, 173, 0.4);
+}
+
+/* Hide native scrollbar but keep scroll functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important; /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 </style>
