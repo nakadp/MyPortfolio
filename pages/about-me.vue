@@ -105,7 +105,7 @@
     <!-- MENU END -->
 
     <!-- content -->
-    <div class="flex flex-col lg:grid lg:grid-cols-2 h-full w-full">
+    <div class="flex flex-col lg:grid lg:grid-cols-1 h-full w-full">
       
       <div id="left" class="w-full flex flex-col border-right">
         
@@ -143,36 +143,6 @@
       
     </div>
 
-    <div id="right" class="max-w-full flex flex-col">
-        
-      <!-- windows tab -->
-      <div class="tab-height w-full h-full hidden lg:flex border-bot items-center">
-
-      </div>
-
-      <!-- windows tab mobile -->
-      <div class="tab-height w-full h-full flex-none lg:hidden items-center">
-
-      </div>
-
-        <div id="gists-content" class="flex">
-        
-          <div id="gists" class="flex flex-col lg:px-6 lg:py-4 w-full overflow-hidden">
-            <!-- title -->
-            <h3 class="text-white lg:text-menu-text mb-4 text-sm">// Code snippet showcase:</h3>
-
-            <div class="flex flex-col overflow-y-auto hide-scrollbar">
-              <!-- snippets -->
-              <GistSnippet data-aos="fade-down" v-for="(gist, key) in config.gists" :key="key" :id="gist" />
-            </div>
-          </div>
-
-          <!-- scroll bar -->
-          <div id="scroll-bar" class="h-full border-left hidden lg:flex justify-center py-1">
-            <div id="scroll"></div>
-          </div>
-        </div>
-      </div>
     </div>
   </main>
 </template>
