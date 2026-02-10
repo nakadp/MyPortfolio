@@ -161,7 +161,7 @@
             <!-- title -->
             <h3 class="text-white lg:text-menu-text mb-4 text-sm">// Code snippet showcase:</h3>
 
-            <div class="flex flex-col overflow-scroll">
+            <div class="flex flex-col overflow-y-auto hide-scrollbar">
               <!-- snippets -->
               <GistSnippet data-aos="fade-down" v-for="(gist, key) in config.gists" :key="key" :id="gist" />
             </div>
