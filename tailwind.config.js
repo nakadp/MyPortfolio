@@ -69,5 +69,8 @@ module.exports = {
             fira_bold: "Fira Code Bold",
             fira_variable: "Fira Code Variable",
         }
-    }
+    },
+    plugins: [
+        require('@tailwindcss/typography'),
+    ]
 }

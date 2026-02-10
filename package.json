@@ -9,13 +9,17 @@
     "test": "vitest"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
     "nuxt": "^3.15.4",
     "vitest": "^3.0.7"
   },
   "dependencies": {
     "@highlightjs/vue-plugin": "highlightjs/vue-plugin",
     "@nuxtjs/tailwindcss": "^6.13.1",
+    "@types/markdown-it": "^14.1.2",
     "aos": "^2.3.4",
-    "highlight.js": "^11.7.0"
+    "highlight.js": "^11.7.0",
+    "markdown-it": "^14.1.0",
+    "shiki": "^3.22.0"
   }
 }

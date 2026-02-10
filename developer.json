@@ -28,7 +28,7 @@
                 "info": {
                     "bio": {
                         "title": "bio",
-                        "description": "<br> About me <br> I have 5 years of experience in web development lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br><br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat  nulla pariatur. Excepteur sint occaecat  officia deserunt mollit anim id est laborum."
+                        "description": "# Hi, I'm Weizen Shon! 👋\n\n> Systems-Oriented Software Engineer based in Tokyo.\n\nI specialize in building **high-performance web applications** and **scalable backend systems**.\n\n## 🚀 Tech Stack\n\n*   **Frontend**: Vue.js, Nuxt, React, Tailwind CSS\n*   **Backend**: Node.js, Python, Go\n*   **Tools**: Docker, Kubernetes, AWS\n\n## 💻 Latest Code Snippet\n\nHere is a snippet of my recent work with `Vue 3` Composition API:\n\n```javascript\nconst useTimeTravel = (targetDate) => {\n  const date = ref(new Date());\n  const travel = () => {\n    date.value = targetDate;\n    console.log('Travelling to...', date.value);\n  };\n  return { date, travel };\n}\n```\n\n## 🌟 Interests\n\n1.  Open Source Contribution\n2.  System Architecture Design\n3.  UI/UX Animations\n\nFeel free to check out my [Github](https://github.com/nakadp) for more!"
                     },
                     "interests": {
                         "title": "interests",

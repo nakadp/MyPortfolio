@@ -110,7 +110,15 @@
       <div id="left" class="w-full flex flex-col border-right">
         
         <!-- breadcrumb navigation -->
-        <Breadcrumb :segments="['about-me', currentSection, folder]" class="hidden lg:flex border-bot" />
+        <div class="flex items-center justify-between border-bot pr-4">
+            <Breadcrumb :segments="['about-me', currentSection, folder]" class="flex-grow border-0" />
+            <div @click="toggleSplitView" class="cursor-pointer hover:bg-[#1E2D3D] p-1 rounded transition-colors group relative" title="Toggle Developer Preview">
+               <!-- Split View Icon (Simulated VS Code Layout Icon) -->
+               <svg class="w-5 h-5 text-menu-text opacity-60 group-hover:opacity-100 transition-opacity" :class="{'opacity-100 text-white': isSplitView}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6z M12 4v16" />
+               </svg>
+            </div>
+        </div>
 
         <!-- windows tab mobile -->
         <div id="tab-mobile" class="flex lg:hidden font-fira_retina">
@@ -121,25 +129,49 @@
         </div>
         
         <!-- text -->
-        <div id="commented-text" class="flex h-full w-full lg:border-right overflow-hidden">
+        <div id="commented-text" class="flex h-full w-full lg:border-right overflow-hidden relative">
 
-          <div class="w-full h-full ml-5 mr-10 lg:my-5 overflow-y-auto hide-scrollbar">
-              <SlidingWindowDecryptedText 
-                :text="config.about.sections[currentSection]?.info[folder].description" 
-                :windowSize="20"
-                :speed="30"
-                encryptedClassName="text-encrypted"
+          <!-- Left Pane (Source/Standard) -->
+          <div 
+            ref="leftPane"
+            class="w-full h-full lg:my-0 transition-all duration-300 overflow-y-auto hide-scrollbar scroll-smooth"
+            :class="isSplitView ? 'lg:w-1/2 border-r border-[#1E2D3D]' : 'lg:w-full ml-5 mr-10 lg:my-5'"
+            @scroll="handleScrollLeft"
+          >
+             <!-- Standard View (Typing Effect) -->
+              <div v-if="!isSplitView" class="h-full w-full">
+                  <SlidingWindowDecryptedText 
+                    :text="config.about.sections[currentSection]?.info[folder].description" 
+                    :windowSize="20"
+                    :speed="30"
+                    encryptedClassName="text-encrypted"
+                  />
+              </div>
+              
+              <!-- Source Code View -->
+              <CodeBlock 
+                 v-else 
+                 :code="currentSourceCode" 
+                 :lang="'json'" 
+                 class="h-full w-full"
               />
           </div>
           
-          <!-- scroll bar -->
-          <div id="scroll-bar" class="h-full border-left hidden lg:flex justify-center py-1">
-            <div id="scroll">
+          <!-- scroll bar (Standard View Only) -->
+          <div v-if="!isSplitView" id="scroll-bar" class="h-full border-left hidden lg:flex justify-center py-1">
+            <div id="scroll"></div>
+          </div>
+
+          <!-- Right Pane (Preview) -->
+          <div 
+             v-if="isSplitView" 
+             ref="rightPane"
+             class="hidden lg:block lg:w-1/2 h-full bg-[#011627] relative overflow-y-auto hide-scrollbar scroll-smooth"
+          >
+              <MarkdownPreview :content="currentDescription" />
           </div>
 
         </div>
-
-      </div>
       
     </div>
 
@@ -265,6 +297,7 @@ export default {
       currentSection: 'personal-info',
       folder: 'bio',
       loading: true,
+      isSplitView: false,
     }
   },
   /**
@@ -286,6 +319,19 @@ export default {
     isOpen() {
       return folder => this.folder === folder;
     },
+    currentFolderInfo() {
+      return this.config.about.sections[this.currentSection]?.info[this.folder] || {}
+    },
+    currentDescription() {
+      return this.currentFolderInfo.description || ''
+    },
+    currentSourceCode() {
+        return JSON.stringify({
+            title: this.currentFolderInfo.title,
+            description: this.currentDescription,
+            // Add other fields if necessary
+        }, null, 2)
+    }
   },
   methods: {
     focusCurrentSection(section) {
@@ -312,6 +358,21 @@ export default {
       document.getElementById('contacts').classList.toggle('hidden')
       document.getElementById('section-arrow').classList.toggle('rotate-90'); // rotate arrow
     },
+    toggleSplitView() {
+        this.isSplitView = !this.isSplitView
+    },
+    handleScrollLeft(e) {
+        if (!this.isSplitView || !this.$refs.rightPane) return
+        
+        const left = e.target
+        const right = this.$refs.rightPane.$el || this.$refs.rightPane
+        
+        // Calculate percentage
+        const percentage = left.scrollTop / (left.scrollHeight - left.clientHeight)
+        
+        // Set right scroll
+        right.scrollTop = percentage * (right.scrollHeight - right.clientHeight)
+    }
   },
   mounted(){
     this.loading = false
